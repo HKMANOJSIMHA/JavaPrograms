@@ -1,0 +1,31 @@
+package termWork2;
+import java.time.LocalDate;
+public class visit {
+	Customer customer;
+	discountRate discount;
+	LocalDate date;
+	double serviceExpenses;
+	double productExpenses;
+	
+	public visit(LocalDate date) {
+		this.date=date;
+	}
+	public void setserviceExpenses(double serviceExpenses) {
+		this.serviceExpenses=serviceExpenses-serviceExpenses*discount.getserviceDiscountRate(customer.memberType);
+	}
+	public double getserviceExpenses() {
+		return serviceExpenses;
+	}
+	public void setProductExpenses(double productExpenses) {
+		this.productExpenses=this.productExpenses+productExpenses;
+	}
+	public double gettotalExpenses() {
+		
+		productExpenses=productExpenses-productExpenses*discount.getproductDiscountRate(customer.memberType);
+		return serviceExpenses+productExpenses;
+	}
+	public String toString() {
+		return customer.toString()+"Date:"+date+"Service Expenses:"+serviceExpenses+"Product Expenses:"+productExpenses;
+	}
+
+}

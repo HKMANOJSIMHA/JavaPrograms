@@ -1,0 +1,12 @@
+
+public class ArrayInJava {
+
+	public static void main(String[] args) {
+		//Declaration and instation of array
+		int iArr[]=new int [10];
+		System.out.println(iArr.length);
+        System.out.println(iArr.getClass());
+        System.out.println(iArr.getClass().getSuperclass());
+	}
+
+}

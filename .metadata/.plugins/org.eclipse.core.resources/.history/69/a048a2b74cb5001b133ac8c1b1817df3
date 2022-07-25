@@ -1,0 +1,46 @@
+package termWork2;
+import java.time.LocalDate;
+import java.util.Scanner;
+public class TermWork2 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		boolean member=false;
+		String memberType="";
+		for(;;) {
+			System.out.println("WELCOME TO BEAUTY PARLOUR:");
+			System.out.print("Enter your name:");
+			String name=sc.next();
+			System.out.println("Are you a member:");
+			System.out.printf("Press\n1 for yes\n0 for no\n");
+			int choice=sc.nextInt();
+			if(choice==1) {
+				member=true;
+				System.out.print("Enter the member type:");
+			    memberType=sc.next();
+			}
+			else if(choice==0) {
+				member=false;
+			}
+			
+			System.out.println("Enter the date in following format:");
+			System.out.printf("Year Month day");
+			int year=sc.nextInt();
+			int Month=sc.nextInt();
+			int day=sc.nextInt();
+			System.out.println("Enter the service expenses:");
+			double sEx=sc.nextDouble();
+			System.out.println("Enter the product expenses:");
+			double pEx=sc.nextDouble();
+			Customer c=new Customer(name);
+			c.setMember(member);
+			c.setmemberType(memberType);
+			visit v=new visit(LocalDate.of(year, Month, day));
+			v.setserviceExpenses(sEx);
+			v.setProductExpenses(pEx);
+			System.out.println(v.toString());
+			System.out.println("Total Expense:"+v.gettotalExpenses());
+		}
+	}
+
+}

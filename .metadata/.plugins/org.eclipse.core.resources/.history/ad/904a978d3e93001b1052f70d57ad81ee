@@ -1,0 +1,36 @@
+
+public class client {
+
+	public static void main(String[] args) {
+		complex c1=new complex(10.5,15.5);
+		complex c2=new complex(11.2,12.2);
+		complex c3=new complex();
+	    c3=c3.addition(c1,c2);
+		c3.display(c3);
+				
+	}
+
+}
+class complex{
+	double real,imaginary;
+	complex()
+	{
+		real=0;
+		imaginary=0;
+	}
+	complex(double r,double i)
+	{
+		real=r;
+		imaginary=i;
+	}
+	complex addition(complex c1,complex c2)
+	{
+		complex temp=new complex();
+		temp.real=c1.real+c2.real;
+		temp.imaginary=c1.imaginary+c2.imaginary;
+		return temp;
+	}
+	void display(complex c) {
+		System.out.println("SUM= "+"("+c.real+")"+" + "+"i"+"("+c.imaginary+")");
+	}
+}

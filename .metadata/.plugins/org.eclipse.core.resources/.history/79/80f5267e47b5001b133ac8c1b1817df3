@@ -1,0 +1,30 @@
+package termWork2;
+
+public class Customer {
+	String name;
+	boolean member;
+	String memberType;
+	
+	public Customer(String name) {
+		this.name=name;
+	}
+	void setMember(boolean member) {
+		this.member=member;
+	}
+	public boolean isMember() {
+		return member;
+	}
+	public void setmemberType(String memberType ) {
+		this.memberType=memberType;
+	}
+	public String getmemberType() {
+		return memberType;
+	}
+	public String toString() {
+		if(member==false)
+			return "Name of customer:"+name+" Is he a member:"+member;
+		else
+			return "Name of customer:"+name+" Is he a member:"+member+" Member type:"+memberType;
+	}
+
+}
